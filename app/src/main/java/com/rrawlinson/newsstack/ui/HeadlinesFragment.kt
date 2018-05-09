@@ -1,4 +1,4 @@
-package com.rrawlinson.newsstack
+package com.rrawlinson.newsstack.ui
 
 
 import android.os.Bundle
@@ -7,10 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.NavOptions
 import androidx.navigation.Navigation.createNavigateOnClickListener
+import com.rrawlinson.newsstack.R
+import retrofit2.Retrofit
+import javax.inject.Inject
 
 class HeadlinesFragment : Fragment() {
+
+    @Inject lateinit var retrofit: Retrofit
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -20,6 +24,8 @@ class HeadlinesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
 //        val options = NavOptions.Builder()
 //                .setEnterAnim(R.anim.nav_default_enter_anim)

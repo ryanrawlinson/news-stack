@@ -1,4 +1,4 @@
-package com.rrawlinson.newsstack
+package com.rrawlinson.newsstack.ui
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import kotlinx.android.synthetic.main.activity_main.*
+import com.rrawlinson.newsstack.R
 
 class MainActivity : AppCompatActivity() {
 

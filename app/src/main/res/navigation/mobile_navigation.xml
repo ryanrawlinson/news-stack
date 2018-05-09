@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/headlinesFragment">
+
+    <fragment
+        android:id="@+id/headlinesFragment"
+        android:name="com.rrawlinson.newsstack.HeadlinesFragment"
+        android:label="fragment_headlines"
+        tools:layout="@layout/fragment_headlines" >
+        <action
+            android:id="@+id/action_headlinesFragment_to_headlineDetailFragment"
+            app:destination="@id/headlineDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/headlineDetailFragment"
+        android:name="com.rrawlinson.newsstack.HeadlineDetailFragment"
+        android:label="fragment_headline_detail"
+        tools:layout="@layout/fragment_headline_detail" ></fragment>
+</navigation>

@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_headlines.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,5 +27,9 @@ class HeadlinesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_headlines, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        getLatestHeadlinesButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.headlineDetailFragment, null))
+    }
 }

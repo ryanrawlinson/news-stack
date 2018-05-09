@@ -21,12 +21,12 @@ class HeadlinesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val options = NavOptions.Builder()
-                .setEnterAnim(R.anim.nav_default_enter_anim)
-                .setExitAnim(R.anim.nav_default_exit_anim)
-                .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
-                .setPopEnterAnim(R.anim.nav_default_pop_exit_anim)
-                .build()
+//        val options = NavOptions.Builder()
+//                .setEnterAnim(R.anim.nav_default_enter_anim)
+//                .setExitAnim(R.anim.nav_default_exit_anim)
+//                .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
+//                .setPopEnterAnim(R.anim.nav_default_pop_exit_anim)
+//                .build()
 
         // Navigate with nav controller and options
 //        view.findViewById<Button>(R.id.getLatestHeadlinesButton).setOnClickListener {

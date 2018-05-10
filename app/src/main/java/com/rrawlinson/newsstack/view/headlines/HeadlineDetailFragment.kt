@@ -1,4 +1,4 @@
-package com.rrawlinson.newsstack.ui
+package com.rrawlinson.newsstack.view.headlines
 
 
 import android.os.Bundle

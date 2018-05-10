@@ -1,4 +1,4 @@
-package com.rrawlinson.newsstack.ui
+package com.rrawlinson.newsstack.view
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView

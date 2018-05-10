@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/headlinesFragment"
-        android:name="com.rrawlinson.newsstack.ui.HeadlinesFragment"
+        android:name="com.rrawlinson.newsstack.view.headlines.HeadlinesFragment"
         android:label="fragment_headlines"
         tools:layout="@layout/fragment_headlines">
         <action
@@ -32,12 +32,12 @@
 
     <fragment
         android:id="@+id/headlineDetailFragment"
-        android:name="com.rrawlinson.newsstack.ui.HeadlineDetailFragment"
+        android:name="com.rrawlinson.newsstack.view.headlines.HeadlineDetailFragment"
         android:label="fragment_headline_detail"
         tools:layout="@layout/fragment_headline_detail" />
     <fragment
         android:id="@+id/newsCategoriesFragment"
-        android:name="com.rrawlinson.newsstack.ui.NewsCategoriesFragment"
+        android:name="com.rrawlinson.newsstack.view.categories.NewsCategoriesFragment"
         android:label="fragment_news_categories"
         tools:layout="@layout/fragment_news_categories" />
 </navigation>

@@ -2,19 +2,25 @@ package com.rrawlinson.newsstack.view.headlines
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.Navigation.createNavigateOnClickListener
 import com.rrawlinson.newsstack.R
+import com.rrawlinson.newsstack.domain.HeadlinesResponse
+import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_headlines.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.http.GET
 import javax.inject.Inject
 
-class HeadlinesFragment : Fragment() {
+class HeadlinesFragment : DaggerFragment() {
 
-    @Inject lateinit var retrofit: Retrofit
+    @Inject
+    lateinit var retrofit: Retrofit
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,7 +33,39 @@ class HeadlinesFragment : Fragment() {
 
 
         // Navigate with an action
-        view.findViewById<Button>(R.id.getLatestHeadlinesButton)
-                .setOnClickListener(createNavigateOnClickListener(R.id.action_headlinesFragment_to_headlineDetailFragment, null))
+//        view.findViewById<Button>(R.id.getLatestHeadlinesButton)
+//                .setOnClickListener(createNavigateOnClickListener(R.id.action_headlinesFragment_to_headlineDetailFragment, null))
+
+        getLatestHeadlinesButton.setOnClickListener {
+            getTopHeadlines()
+        }
+    }
+
+    private fun getTopHeadlines() {
+        val newsService = retrofit.create(NewsService::class.java)
+
+        newsService.getTopHeadlines()
+                .enqueue(object : Callback<HeadlinesResponse> {
+                    override fun onFailure(call: Call<HeadlinesResponse>?, t: Throwable?) {
+                        Log.d(TAG, t?.message)
+                    }
+
+                    override fun onResponse(call: Call<HeadlinesResponse>?, response: Response<HeadlinesResponse>?) {
+                        response?.takeIf { it.isSuccessful }?.let {
+                            val data = it.body()
+                            Log.d(TAG, data.toString())
+                        }
+                    }
+                })
+    }
+
+    interface NewsService {
+
+        @GET("top-headlines?country=us")
+        fun getTopHeadlines(): Call<HeadlinesResponse>
+    }
+
+    companion object {
+        private val TAG = HeadlinesFragment::class.java.canonicalName
     }
 }

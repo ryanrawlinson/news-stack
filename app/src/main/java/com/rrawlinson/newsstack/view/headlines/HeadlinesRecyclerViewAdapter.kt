@@ -26,6 +26,7 @@ class HeadlinesRecyclerViewAdapter(private val headlines: MutableList<HeadlineRe
     fun refreshData(updatedList: HeadlinesResponse) {
         with(headlines) {
             clear()
+            clear()
             updatedList.articles?.let { addAll(it) }
             notifyDataSetChanged()
         }

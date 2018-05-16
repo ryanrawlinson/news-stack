@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/headlineDetailImageView"
         android:layout_width="0dp"
         android:layout_height="225dp"
         android:layout_marginStart="8dp"
@@ -18,29 +18,29 @@
         tools:src="@tools:sample/backgrounds/scenic[9]" />
 
     <TextView
-        android:id="@+id/headlineTitleTextView"
+        android:id="@+id/headlineDetailTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/headlineDetailImageView"
         tools:text="@tools:sample/cities"
         android:textSize="32sp"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/headlinePublishedDateTextView"
+        android:id="@+id/headlineDetailPublishedDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/headlineTitleTextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/headlineDetailTitleTextView"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="@tools:sample/date/mmddyy"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/headlineDetailDescriptionTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -51,6 +51,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headlineTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/headlineDetailTitleTextView"
         tools:text="@tools:sample/lorem/random" />
 </androidx.constraintlayout.widget.ConstraintLayout>

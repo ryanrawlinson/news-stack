@@ -42,7 +42,7 @@ platform :android do
       username: "build_user",
       password: "siren-maenad-pizzeria",
       endpoint: "https://na-artifact-01.na.audatex.com:8443/artifactory",
-      file: "news-stack-debug.apk",
+      file: "app-debug.apk",
       repo: "/mobile_frontend/android-test",
       ssl_verify: false
     )

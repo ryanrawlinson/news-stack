@@ -22,7 +22,7 @@ class NetworkModule {
     @Singleton
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
-                .addInterceptor({
+                .addInterceptor {
                     val url = it.request().url()
                             .newBuilder()
                             .addQueryParameter("apiKey", "36641f142d97430db107726d6deb5f06")
@@ -30,7 +30,7 @@ class NetworkModule {
 
                     val request = it.request().newBuilder().url(url).build()
                     it.proceed(request)
-                }).build()
+                }.build()
     }
 
     @Provides

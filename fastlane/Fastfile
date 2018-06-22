@@ -16,34 +16,18 @@
 default_platform(:android)
 
 platform :android do
-  # desc "Runs all the tests"
-  # lane :test do
-  #   gradle(task: "test")
-  # end
-
-  # desc "Submit a new Beta Build to Crashlytics Beta"
-  # lane :beta do
-  #   gradle(task: "clean assembleRelease")
-  #   crashlytics
-  
-  #   # sh "your_script.sh"
-  #   # You can also use other beta testing services here
-  # end
-
-  # desc "Deploy a new version to the Google Play"
-  # lane :deploy do
-  #   gradle(task: "clean assembleRelease")
-  #   upload_to_play_store
-  # end
 
   desc "Deploy apk to artifactory"
-  lane :artifactory do
+  lane :deploy_artifact do
     artifactory(
       username: "build_user",
       password: "siren-maenad-pizzeria",
       endpoint: "https://na-artifact-01.na.audatex.com:8443/artifactory",
-      file: "app-debug.apk",
-      repo: "/mobile_frontend/android-test",
+      file: "./app/build/ouputs/apk/debug/app-debug.apk",
+      repo: "mobile_frontend",
+      repo_path: "/android_test/",
       ssl_verify: false
     )
+  end
+
 end
